@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.test.mapper.BoardMapper">
+
+	<select id="boardList" resultType="com.board.test.domain.Board">
+		select * from tbl_board
+	</select>
+	
+	<insert id="writeAction" parameterType="com.board.test.domain.Board">
+		insert into tbl_board( b_title, b_content, b_writer, b_date)
+		values ( #{param1}, #{param2}, "jh", now())
+	</insert>
+	
+	<select id="boardContent" resultType="com.board.test.domain.Board">
+		select * from tbl_board
+		where b_num = #{b_num}
+	</select>
+	
+	<update id="boardUpdate" parameterType="com.board.test.domain.Board">
+		update tbl_board
+		set b_title = #{b_title}, b_content = #{b_content}
+		where b_num = #{b_num}
+	</update>
+
+</mapper>
