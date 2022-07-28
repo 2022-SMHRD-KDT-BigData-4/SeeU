@@ -107,13 +107,14 @@ public class HController extends HttpServlet{
 		System.out.println(S_address);
 		String S_care = request.getParameter("S_care");
 		System.out.println(S_care);
+		// 텍스트 받아옴
+		// 쌤이 MultipartFile이랑 @RequestParam이 같이 안먹는다고 하셧음 왠지모름
 		
-		
-		String S_photoPath = System.getProperty("user.dir")+"\\src\\main\\webapp\\WEB-INF\\resource\\file";
-		UUID uuid = UUID.randomUUID();
-		String S_photoname = uuid + "_" + photo.getOriginalFilename();
-		File saveFile = new File(S_photoPath,S_photoname);
-		photo.transferTo(saveFile);
+		String S_photoPath = System.getProperty("user.dir")+"\\src\\main\\webapp\\WEB-INF\\resource\\file";//경로설정
+		UUID uuid = UUID.randomUUID();//랜덤이름 생성
+		String S_photoname = uuid + "_" + photo.getOriginalFilename();//PC에저장할 파일이름(랜덤이름 + 원래이름)
+		File saveFile = new File(S_photoPath,S_photoname);//경로,파일이름 받아와서
+		photo.transferTo(saveFile); // PC에 저장
 
 		vo.setS_name(S_name);
 		vo.setS_birth(S_birth);
