@@ -9,4 +9,3 @@ import com.board.test.domain.Board;
 public interface Repo extends JpaRepository<Board, String> {
 	
 }
-

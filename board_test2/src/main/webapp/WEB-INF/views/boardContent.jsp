@@ -1,4 +1,3 @@
-<%@page import="com.board.test.domain.Comment"%>
 <%@page import="com.board.test.domain.Board"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,12 +21,18 @@
 </style>
 </head>
 <script type="text/javascript">
+
   	function goList(){
   		location.href='/boardList'
   	}
-  	<%
-	List<Comment> list = (List<Comment>) request.getAttribute("list");
-	%>
+  	
+  	function goDelete(b_num){
+  		location.href = '/boardDelete.do?b_num=' + b_num
+  	}
+  	
+  	function goUpdate(b_num){
+  		location.href = '/boardGoUpdate.do?b_num=' + b_num;
+  	}
   </script>
   
 <body>
@@ -65,50 +70,8 @@
 	  				<button onClick="goUpdate(${board.b_num})">수정</button>
 	  			</td>
 	  		</tr>
+	  				
 	  	</table>
 	  	
-	  	<table width="500" cellpadding="0" cellspacing="0" border="1">
-		<input type="hidden" name="bno" value="${comment.b_num}">
-		<tr>
-			<th>글번호</th>
-			<th>댓글내용</th>
-			<th>날짜</th>
-			<th>작성자</th>
-		
-		</tr>
-		<%
-			for (Comment comment : list) {
-		%>
-		<tr>
-			<td><%=comment.getC_num() %></td>
-			<td><%=comment.getC_content() %></td>
-			<td><%=comment.getC_date() %></td>
-			<td><%=comment.getMem_id() %></td>
-			<td><button onClick="goDelete(${comment.c_num})">댓글삭제</button></td>
-		</tr>
-		<%
-			}
-		%>
-		
-	</table>
-  <div class="panel panel-default">
-    <div class="panel-body">
-				<form class="form-horizontal" action='CommentwriteAction.do' method="post">
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="content">댓글:</label>
-						<div class="col-sm-10">
-							<textarea name="c_content" id="c_content" rows="10" class="form-control"></textarea>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">댓글입력</button>
-						
-						</div>
-					</div>
-				</form>
-			</div>
-  </div>
 </body>
 </html>

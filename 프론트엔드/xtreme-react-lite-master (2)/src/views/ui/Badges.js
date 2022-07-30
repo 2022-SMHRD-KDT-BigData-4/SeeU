@@ -1,75 +1,70 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import 'css/lest.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Link } from 'react-router-dom';
+import Axios from "axios";
+import $ from "jquery";
+
 
 
 // 게시글 작성 Page
 
 function Review() {
-  const [movieContent, setMovieContent] = useState({
-    title : '',
-    content : ''
-})
+  const mem_id = sessionStorage.getItem('mem_id')
+  const mem_address = sessionStorage.getItem('mem_address')
+  const mem_name = sessionStorage.getItem('mem_name')
+  const mem_phone = sessionStorage.getItem('mem_phone')
 
-const [viewContent, setViewContent] = useState([]);
+let param = {};
 
-const getValue = e => {
-    const { name, value } = e.target;
-    setMovieContent({
-        ...movieContent,
-        [name]: value
+useEffect(()=>{
+
+    $(".submit-button2").on('click',function (){
+        param.b_title = $("div.form-wrapper > input:eq(0)").val()
+        param.b_content = $("textarea.b_cont").val()
+        param.b_writer = (sessionStorage.getItem('mem_id'))
+        console.log("=======================gd")
+        console.log(param);
+        console.log($("div.form-wrapper > input:eq(0)").val());
+        console.log($("textarea.b_cont").val());
+  
+
+      Axios.post("/api/boardInsert", param).then((response)=>{
+        if(response.data){
+          console.log(response.data);
+        }else{
+          alert("failed to");
+        }
+      })
     })
-    console.log(movieContent);
-};
+},[])
+
 return (
 <div className="App">
-  <h1>Movie Review</h1>
+  <h1>Use Review</h1>
   
   <div className='form-wrapper'>
     <input className="title-input" 
             type='text' 
             placeholder='제목' 
-            onChange={getValue}
-            name='title'
+            // onChange={getValue}
+            name='b_title'
     />
-    <CKEditor
-      editor={ClassicEditor}
-      data="<p>Hello from CKEditor 5!</p>"
-      onReady={editor => {
-        
-        console.log('Editor is ready to use!', editor);
-      }}
-      onChange={(event, editor) => {
-        const data = editor.getData();
-        console.log({ event, editor, data });
-        setMovieContent({
-          ...movieContent,
-          content: data
-        })
-        console.log(movieContent);
-      }}
-      onBlur={(event, editor) => {
-        console.log('Blur.', editor);
-      }}
-      onFocus={(event, editor) => {
-        console.log('Focus.', editor);
-      }}
-    />
+    <br></br>
+    <textarea className="b_cont" rows="15" cols="90">
+    </textarea>
+  
   </div>
+  <br></br>
   <Link to="/Table">
               <button type="button" className="submit-button1">
                     목록
               </button>
  </Link>
 
- <Link to="/Buttons">
-  <button className="submit-button2"
-  onClick={() => {
-    setViewContent(viewContent.concat({...movieContent}));
-  }
-  }>완료</button>
+ <Link to="/Table"> 
+  <button type="submit" className="submit-button2">작성하기</button>
  </Link>
 </div>
 );

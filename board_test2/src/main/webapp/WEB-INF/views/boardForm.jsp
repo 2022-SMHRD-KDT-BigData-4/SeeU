@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <h2>게시판 글 작성</h2>
+  <h2>게시판 글 작성</h2>
   <div class="panel panel-default">
     <div class="panel-body">
 				<form class="form-horizontal" action='writeAction.do' method="post">
@@ -28,11 +29,10 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-default">Submit</button>
-							<button onclick = "location.href='boardList.do'">목록보기</button>
+							<button onclick = "location.href='/boardList'">목록보기</button>
 						</div>
 					</div>
 				</form>
-				
 			</div>
   </div>
 </body>

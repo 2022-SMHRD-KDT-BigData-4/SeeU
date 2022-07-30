@@ -21,6 +21,8 @@ const Alram = lazy(() => import("../Main/Alram"));
 const Banner = lazy(() => import("../Main/Banner"));
 const Int = lazy(() => import("../Main/Int"));
 const A = lazy(() => import("../Main/A"));
+const Test = lazy(() => import("../views/ui/Test"));
+const BoardDetail = lazy(() => import("../views/ui/BoardDetail"));
 /*****Routes******/
 
 const ThemeRoutes = [
@@ -44,6 +46,8 @@ const ThemeRoutes = [
       { path: "/Alram", exact: true, element: <Alram /> },
       { path: "/Int", exact: true, element: <Int /> },
       { path: "/A", exact: true, element: <A /> },
+      { path: "/Test", exact: true, element: <Test /> },
+      { path: "/BoardDetail", exact: true, element: <BoardDetail /> },
     ],
   },
 ];

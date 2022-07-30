@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-@Configuration // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-@EnableTransactionManagement // Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+@Configuration // ¼³Á¤ÆÄÀÏ
+@EnableTransactionManagement // Æ®·£Á§¼Ç °ü¸®
 @MapperScan(basePackages = "com.board.test.mapper")
 public class DataBaseConfigMybatis {
 	
@@ -36,18 +36,20 @@ public class DataBaseConfigMybatis {
 		return new HikariDataSource(dataSourceConfig);
 	}
 	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ SQLï¿½ï¿½ ï¿½ï¿½ï¿½à¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+	//µ¥ÀÌÅÍº£ÀÌ½º¿ÍÀÇ ¿¬°á°ú SQLÀÇ ½ÇÇà¿¡ ´ëÇÑ ¸ðµç °ÍÀ» °¡Áø °¡Àå Áß¿äÇÑ °´Ã¼
 	@Bean(name="batisSqlSessionFactory")
 	public SqlSessionFactory batisSqlSessionFactory(@Qualifier("batisDataSource") DataSource batisDataSource, ApplicationContext applicationContext) throws Exception {
 		SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
 		sqlSession.setDataSource(batisDataSource);
-		sqlSession.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml")); //mybatis-config.xmlï¿½ï¿½ ï¿½ï¿½ï¿½
-		sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/BoardMapper.xml")); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ mapperï¿½ï¿½ ï¿½ï¿½ï¿½
-		sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/CommentMapper.xml"));
+		sqlSession.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml")); //mybatis-config.xmlÀÇ °æ·Î
+		sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/BoardMapper.xml")); //Äõ¸®¹®À» °ü¸®ÇÏ´Â mapperÀÇ °æ·Î
+	      sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/MemberMapper.xml"));
+	      sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/SeniorMapper.xml"));
+	      
 		return sqlSession.getObject();
 	}
 	
-	// ï¿½ï¿½ï¿½Ì¹ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½
+	// ¸¶ÀÌ¹ÙÆ¼½º ½ºÇÁ¸µ ¿¬µ¿¸ðµâÀÇ ÇÙ½É
 	@Bean(name = "batisSqlSessionTemplate")
 	public SqlSessionTemplate batSessionTemplate(SqlSessionFactory batisSqlSessionFactory) throws Exception {
 		
