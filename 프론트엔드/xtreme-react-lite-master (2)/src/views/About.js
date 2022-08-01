@@ -54,7 +54,7 @@ function Login() {
     
 
   },[]);
-   return (
+    return (
     <div className="loginregister2"> 
         <form>
             <center className="title1"><h1> Login </h1></center>

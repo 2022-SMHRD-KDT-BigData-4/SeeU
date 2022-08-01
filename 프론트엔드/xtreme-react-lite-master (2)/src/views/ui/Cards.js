@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import Blog from "../../components/dashboard/Blog";
 import bg1 from "../../assets/images/bg/bg1.jpg";
+import 자물쇠2 from "../../assets/images/bg/자물쇠2.png";
 // import bg2 from "../../assets/images/bg/bg2.jpg";
 // import bg3 from "../../assets/images/bg/bg3.jpg";
 // import bg4 from "../../assets/images/bg/bg4.jpg";
@@ -68,9 +69,12 @@ const Cards = () => {
         <>
         <div className='dd'>
           <br></br>
-          <center><h5>로그인 후 이용가능합니다.</h5></center>
+          <img className="wk" src={자물쇠2}></img><h1 className="h1">Login</h1>
           <hr></hr>
-          <button className='one' type='button'>로그인</button><button className='two' type='button'>회원가입</button>
+          <br></br>
+          <p className="pp">서비스를 이용하시려면 로그인이 필요합니다.</p>
+          <br></br>
+          <Link to="/About"><button className='one' type='button'>로그인</button></Link><Link to="/Breadcrumbs"><button className='two' type='button'>회원가입</button></Link>
         </div>
         </>
         )

@@ -2,6 +2,7 @@ import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
 import user1 from "assets/images/users/user1.jpg";
 import user2 from "assets/images/users/user2.jpg";
 import user3 from "assets/images/users/user3.jpg";
+import 'css/lest.css';
 
 const tableData = [
   {
@@ -16,12 +17,12 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "백엔드",
   },
-  {
-    avatar: user3,
-    name: "심우현",
-    email: "hgover@gmail.com",
-    project: "인공지능 총괄",
-  },
+  // {
+  //   avatar: user3,
+  //   name: "심우현",
+  //   email: "hgover@gmail.com",
+  //   project: "인공지능 총괄",
+  // },
 ];
 
 const Int = () => {
@@ -31,7 +32,7 @@ const Int = () => {
         <CardBody>
           <CardTitle tag="h5">ㅤ</CardTitle>
           
-          <Table className="no-wrap mt-3 align-middle" responsive borderless>
+          <Table className="no" responsive borderless>
             <thead>
               <tr>
                 <th>Team Lead</th>

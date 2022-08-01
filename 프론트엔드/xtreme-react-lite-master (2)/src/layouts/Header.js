@@ -47,7 +47,7 @@ const Header = (props) => {
         <NavbarBrand href="/" className="d-lg-none">
           <LogoWhite />
         </NavbarBrand>
-        <span className="ling"><Alram></Alram></span>
+        {/* <span className="ling"><Alram></Alram></span>
         <Button
           color="primary"
           className="d-lg-none"
@@ -68,7 +68,7 @@ const Header = (props) => {
           ) : (
             <i className="bi bi-three-dots-vertical"></i>
           )}
-        </Button>
+        </Button> */}
       </div>
 
       <Collapse navbar isOpen={isOpen}>

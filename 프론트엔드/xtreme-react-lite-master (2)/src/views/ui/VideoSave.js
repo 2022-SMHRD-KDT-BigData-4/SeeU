@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import 자물쇠2 from "../../assets/images/bg/자물쇠2.png";
 import 'css/lest.css';
 // import Bar from 'modals/Bar';
 import Pagination from 'modals/Pagination';
 import RecordModal from 'modals/RecordModal';
-import 'css/lest.css';
+import { Link } from "react-router-dom";
 
 
 function AutoLayoutExample() {
@@ -19,14 +20,17 @@ function AutoLayoutExample() {
   
   if(mem_id === null ){
       return(
-      <>
-      <div className='dd'>
-        <br></br>
-        <center><h5>로그인 후 이용가능합니다.</h5></center>
-        <hr></hr>
-        <button className='one' type='button'>로그인</button><button className='two' type='button'>회원가입</button>
-      </div>
-      </>
+        <>
+        <div className='dd'>
+          <br></br>
+          <img className="wk" src={자물쇠2}></img><h1 className="h1">Login</h1>
+          <hr></hr>
+          <br></br>
+          <p className="pp">서비스를 이용하시려면 로그인이 필요합니다.</p>
+          <br></br>
+          <Link to="/About"><button className='one' type='button'>로그인</button></Link><Link to="/Breadcrumbs"><button className='two' type='button'>회원가입</button></Link>
+        </div>
+        </>
       )
     } 
     
