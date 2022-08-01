@@ -36,24 +36,24 @@
 ![메인3](https://user-images.githubusercontent.com/104408863/182051931-63717035-2714-4c98-a837-35bcac51e8cb.png)
 
 * 시니어관리
-- 시니어목록
+-- 시니어목록
 ![image](https://user-images.githubusercontent.com/104408863/182051970-09955067-f371-42db-9b52-0809817417f6.png)
-- 시니어 등록
+-- 시니어 등록
 ![시니어 등록](https://user-images.githubusercontent.com/104408863/182051988-7c73a986-24ae-4171-8ca5-9775d5f06ad4.png)
 
 * 문의게시판
-- 게시판 목록
+-- 게시판 목록
 ![게시판](https://user-images.githubusercontent.com/104408863/182052002-2d7793a0-63cb-4478-b539-4fb42bcc4981.png)
-- 게시판 상세보기
+-- 게시판 상세보기
 ![상세보기](https://user-images.githubusercontent.com/104408863/182052019-ea50437d-1de1-48b9-b285-13ebc2280f07.png)
-- 게시판 글쓰기
+-- 게시판 글쓰기
 ![image](https://user-images.githubusercontent.com/104408863/182052048-a71f62eb-b754-4b3a-a811-0fe8b8a1b568.png)
 
 
 * 영상저장소
-- 영상목록
+-- 영상목록
 ![image](https://user-images.githubusercontent.com/104408863/182052080-a9c59053-3299-4085-8728-e08689604852.png)
-- 영상화면
+-- 영상화면
 ![비디오 영상](https://user-images.githubusercontent.com/104408863/182052093-2b192a68-2415-435f-b016-de9b775e6123.png)
 
 
