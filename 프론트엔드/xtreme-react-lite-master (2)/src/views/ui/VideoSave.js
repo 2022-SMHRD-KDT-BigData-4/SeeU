@@ -50,7 +50,7 @@ function AutoLayoutExample() {
            
           </div>
           <hr className='hr'></hr>
-          <p className='p-1'>KR100443682B1_01_33._</p>
+          <p className='p-1'>2022-07-20 4:02pm</p>
         </Col>
         <Col className='z-2' md="3"><div className='x-1'>
          
@@ -65,7 +65,7 @@ function AutoLayoutExample() {
            
           </div>
           <hr className='hr'></hr>
-          <p className='p-1'>KR100443682B1_01_33._</p></Col>
+          <p className='p-1'>2022-06-25 5:05 pm</p></Col>
       </Row>
       <br></br>
       <br></br>
@@ -76,21 +76,21 @@ function AutoLayoutExample() {
          
           </div>
           <hr className='hr'></hr>
-          <p className='p-1'>KR100443682B1_01_33._</p></Col>
+          <p className='p-1'>2022-06-10 8:24 am</p></Col>
         <Col className='z-2' md="3"><div className='x-1'>
           
               <img src="img/record.png" className='gg-2' onClick={()=>setRecordModalOn(true)}></img>
           
           </div>
           <hr className='hr'></hr>
-          <p className='p-1'>KR100443682B1_01_33._</p></Col>
+          <p className='p-1'>2022-05-29 3:16 pm</p></Col>
         <Col className='z-3' md="3"><div className='x-1'>
           
               <img src="img/record.png" className='gg-2' onClick={()=>setRecordModalOn(true)}></img>
           
           </div>
           <hr className='hr'></hr>
-          <p className='p-1'>KR100443682B1_01_33._</p></Col>
+          <p className='p-1'>2022-05-18 10:14 am</p></Col>
       </Row>
       <br></br>
       <br></br>     

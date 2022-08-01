@@ -13,13 +13,13 @@ const RecordModal = ({ show, onHide}) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          제목
+          2022-07-20 4:02pm 낙상 당시 동영상입니다
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
       <video controls className='video'>
 
-        <source src="video/video.mp4"
+        <source src="video/seniorVideo.mp4"
         type="video/mp4"></source>
 
       </video>

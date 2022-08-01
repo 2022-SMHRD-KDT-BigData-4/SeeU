@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import Blog from "../../components/dashboard/Blog";
 import bg1 from "../../assets/images/bg/bg1.jpg";
+import snp from "../../assets/images/bg/시니어.png";
 import 자물쇠2 from "../../assets/images/bg/자물쇠2.png";
 // import bg2 from "../../assets/images/bg/bg2.jpg";
 // import bg3 from "../../assets/images/bg/bg3.jpg";
@@ -93,11 +94,11 @@ const Cards = () => {
             <CardGroup>
             
               {
-                
+
                 senior.map((senior,index) => (
-                 
-              <Card key = {index}>
-                <CardImg alt="Card image cap" src= {bg1} top width="100%" />
+              <Card key = {index} className="snlist">
+                {/* <CardImg alt="Card image cap" src= {bg1} top width="100%" /> */}
+                <CardImg alt="Card image cap" src= {snp} top width="100%" />
                 <CardBody>
                   <CardTitle tag="h5">{senior.s_name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -108,7 +109,6 @@ const Cards = () => {
                     {senior.s_address}
                   </CardText>
                   <hr></hr>
-                 
                   <p>{senior.s_care}</p>
                   <hr></hr>
                   <Button onClick={()=> setModalOn(true)}>영상보기</Button>

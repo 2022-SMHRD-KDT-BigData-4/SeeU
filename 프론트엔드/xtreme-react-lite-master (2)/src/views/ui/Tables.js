@@ -70,18 +70,14 @@ if(mem_id === null){
               </thead>
               
               <tbody>
-                
-              {
-                  board.map((board,index) => (
+              {board.map((board,index) => (
                   <tr className="z">
                   <th key={index} scope="row">{board.b_num}</th>
-                  {/* <td><Link to="/Buttons" value={board.b_num}  className="em-3"> */}
                   <td onClick={(e)=>{fn_moveDetail(board.b_num, e)}}>{board.b_title}</td>
                   <td>{board.b_writer}</td>
                   <td>{board.b_date}</td>
                 </tr>
-                ))
-                } 
+                ))} 
               </tbody>
             </Table>
           </CardBody>
