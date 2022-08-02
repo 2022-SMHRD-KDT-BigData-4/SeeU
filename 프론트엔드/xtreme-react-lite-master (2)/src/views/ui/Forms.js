@@ -28,31 +28,22 @@ const Forms = () => {
   useEffect(()=>{ 
   
     $(".tt-4").on('click',function () {      //마우스 누를떼 
-      console.log($("div.loginregister__id > input:eq(0)").val());
-      console.log($("div.loginregister__email > input:eq(0)").val());
-      console.log($("div.loginregister__pw > input:eq(0)").val());
-      param.mem_id = $("div.loginregister__id > input:eq(0)").val()
-      param.mem_pw = $("div.loginregister__pw > input:eq(0)").val() 
-      param.mem_name = $("div.loginregister__name > input:eq(0)").val()
-      param.mem_email = $("div.loginregister__email > input:eq(0)").val()
-      param.mem_address = $("div.loginregister__address > input:eq(0)").val()
-      param.mem_phone = $("div.loginregister__phone > input:eq(0)").val()
       param.s_name = $("input[name='s_name']").val()
       param.s_birth = $("input[name='s_birth']").val()
       param.s_gender = $("input[name='s_gender']:checked").val()
-      // param.photo = $("#photo").val()
-      // param.photo = document.getElementById('s_photo').value
       param.s_phone = $("input[name='s_phone']").val()
   
       param.s_address = $("input[name='s_address']").val()
       param.s_care = $("input[name='s_care']").val()
-  
+      sessionStorage.setItem('s_name',  param.s_name);
       console.log(param);
       
       Axios.post("/api/seniorInsert",param).then((response)=>{
         if(response.data){
           console.log(response.data);
+          sessionStorage.setItem('s_name',  param.s_name);
           //setUser(response.data);
+          
         }else{
           alert("failed to ");
         }

@@ -35,6 +35,7 @@ const Cards = () => {
     const mem_address = sessionStorage.getItem('mem_address')
     const mem_name = sessionStorage.getItem('mem_name')
     const mem_phone = sessionStorage.getItem('mem_phone')
+    const s_name = sessionStorage.getItem('s_name')
     let param = {};
     Axios.post("/api/seniorList",param).then((response)=>{
       console.log("1", response)
@@ -65,6 +66,7 @@ const Cards = () => {
   const mem_address = sessionStorage.getItem('mem_address')
   const mem_name = sessionStorage.getItem('mem_name')
   const mem_phone = sessionStorage.getItem('mem_phone')
+  const s_name = sessionStorage.getItem('s_name')
     if(mem_id === null ){
       return(
         <>
@@ -81,25 +83,50 @@ const Cards = () => {
         )
   }
   else {
+    if(s_name === null){
+      return (
+        <>
+      <Modal show={ModalOn} onHide={()=>setModalOn(false)} />
+      <div>
+        <Row>
+          <div className="ss3"></div>
+          <div className="tt-3"><Link to="/Forms"><button className="ll-3">추가하기</button></Link></div>
+        </Row>
+        <Row>
+          <Col>
+            <CardGroup className="group">
+            
+          <hr></hr>
+          <br></br><br></br><br></br><br></br><br></br>
+          <p className="fkfk">시니어를 추가해주세요</p>
+              
+            </CardGroup>
+          </Col>
+        </Row>
+      </div>
+      </>
+      )
+    }
+    else{
     return (
       <>
       <Modal show={ModalOn} onHide={()=>setModalOn(false)} />
       <div>
         <Row>
-          <div className="ss3"><h2>노인 관리 page</h2></div>
+          <div className="ss3"></div>
           <div className="tt-3"><Link to="/Forms"><button className="ll-3">추가하기</button></Link></div>
         </Row>
         <Row>
           <Col>
-            <CardGroup>
+            <CardGroup className="group">
             
               {
 
                 senior.map((senior,index) => (
               <Card key = {index} className="snlist">
                 {/* <CardImg alt="Card image cap" src= {bg1} top width="100%" /> */}
-                <CardImg alt="Card image cap" src= {snp} top width="100%" />
-                <CardBody>
+                <CardImg alt="Card image cap" className="go" src= {snp} top width="100%" />
+                <CardBody className="to">
                   <CardTitle tag="h5">{senior.s_name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted" tag="h6">
                    {senior.s_gender} {senior.s_birth}
@@ -111,7 +138,7 @@ const Cards = () => {
                   <hr></hr>
                   <p>{senior.s_care}</p>
                   <hr></hr>
-                  <Button onClick={()=> setModalOn(true)}>영상보기</Button>
+                  <Button className="b" onClick={()=> setModalOn(true)}>영상보기</Button>
                 </CardBody>
               </Card>
                 ))
@@ -124,6 +151,7 @@ const Cards = () => {
       </>
     )
   }
+}
 };
 
 export default Cards;

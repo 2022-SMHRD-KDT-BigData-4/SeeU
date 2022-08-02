@@ -103,3 +103,31 @@
     margin-top: 2px;
     margin-left: 20px;
 }
+.go{
+    display: block;
+    position: relative;
+    top: 50px;
+    width: 200px;
+    height: 150px;
+    margin: auto;
+}
+.group{
+    width: 500px;
+    margin: auto;
+    height: 500px;
+}
+.to{
+    display: block;
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 300px;
+}
+.b{
+    margin-left: 90px;
+}
+.fkfk{
+    margin-top: 200px;
+    font-size: 30px;
+    margin: auto;
+}
