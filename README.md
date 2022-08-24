@@ -12,12 +12,12 @@
 * 영상저장소 : 사용된 영상들을 저장하는 페이지 구현
 
 ## 3. 개발환경
-| 구분 | 내용 |
-|---------|
-| 사용언어 | React, Spring boot, Python(MediaPipe) |
-| 개발도구 | Eclipse , VisualStudioCode, Colab, Jupyter Notebook |
-| 서버환경 | Node.js, Tomcat 9.0, Flask |
-| 데이터베이스 | MySQL |
+|구분|내용|
+|------|---|
+|사용언어| React, Spring boot, Python(MediaPipe) |
+|개발도구| Eclipse , VisualStudioCode, Colab, Jupyter Notebook |
+|서버환경| Node.js, Tomcat 9.0, Flask |
+|데이터베이스| MySQL |
 
 ## 4. 개발흐름
 ![image](https://user-images.githubusercontent.com/104408863/182051650-b69854cc-cce0-496c-b69a-5fc1195be522.png)
