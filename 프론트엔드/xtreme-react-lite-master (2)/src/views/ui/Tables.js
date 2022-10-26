@@ -21,7 +21,7 @@ const Tables = () => {
       console.log("데이터", response)
       console.log("데이터2", response.data)
       if(response.data){
-        // 여기 스프레드표현법 말고 그냥 바로넣음(그래야 실행이 되네??)
+        // 여기 스프레드표현법 말고 그냥 바로넣음(그래야 실행이 됨)
         setBoard(response.data); // ...을 써줘서  state가 변경된걸 리액트에게 알려주기
         console.log(response.data);
       }else{
@@ -32,13 +32,6 @@ const Tables = () => {
 
   },[]);
   
-  // const handleClick = () => {
-  //   navigate('/Test', {
-  //     state: {
-  //       title: "test",
-  //     },
-  //   });
-  // };
 
   const fn_moveDetail = (b_num,  e) => {
     navigate('/Buttons', {

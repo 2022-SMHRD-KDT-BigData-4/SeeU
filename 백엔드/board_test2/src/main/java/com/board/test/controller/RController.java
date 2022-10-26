@@ -39,28 +39,27 @@ public class RController {
 	
 	@PostMapping("/api/board")
 	public List<Board> board() {
-		System.out.println("°Ô½Ã±Û ¸ñ·Ï ÆäÀÌÁö");
-	//		Board board = new Board(1, "jj","gg","hh","2022.07.23");
+		System.out.println("ê²Œì‹œê¸€ ëª©ë¡ í˜ì´ì§€");
 		List<Board> board = mapper.boardList();
 		return  board;
 	}
 	
 	@PostMapping("/api/boardInsert")
 	public int boardInsert(@RequestBody Board board) {
-		System.out.println("°Ô½Ã±Û ÀÛ¼º¿Ï·á");
+		System.out.println("ê²Œì‹œê¸€ ì‘ì„±ì™„ë£Œ");
 		return service.insertBoard(board);
 	}
 	
 	@PostMapping("/api/boardContent")
 	public Board boardContent(@RequestBody int b_num ) {
 		
-		System.out.println("»ó¼¼ ±Û º¸±â"+b_num);
+		System.out.println("ìƒì„¸ ê¸€ ë³´ê¸°"+b_num);
 		return service.boardContent(b_num);
 	}
 	
 	@PostMapping("/api/boardDelete")
 	public int boardDelete(@RequestBody int b_num) {
-		System.out.println("±Û»èÁ¦");
+		System.out.println("ê¸€ì‚­ì œ");
 		return service.boardDelete(b_num);
 		
 	}
@@ -68,19 +67,19 @@ public class RController {
 	@PostMapping("/api/comment")
 	public List<Comment> comment(@RequestBody int num){
 		List<Comment> comment = cmapper.CommentList(num);
-		System.out.println("´ñ±Û º¸±â");
+		System.out.println("ëŒ“ê¸€ ë³´ê¸°");
 		return comment;
 	}
 	
 	@PostMapping("/api/commentInsert")
 	public int commentInsert(@RequestBody Comment comment) {
-		System.out.println("´ñ±Û ÀÛ¼º!");
+		System.out.println("ëŒ“ê¸€ ì‘ì„±!");
 		return service.insertComment(comment);
 	}
 	
 	@PostMapping("/api/commentDelete")
 	public int commentDelete(@RequestBody int num) {
-		System.out.println("´ñ±Û »èÁ¦");
+		System.out.println("ëŒ“ê¸€ ì‚­ì œ");
 		return service.deleteComment(num);
 	}
 	
@@ -96,10 +95,6 @@ public class RController {
 	   
 	   @PostMapping("/api/memberLogin")
 	   public Member selectOneMember(@RequestBody Member mem){
-//	      mem = service.selectOneMember(mem);
-//	      if(mem != null) {
-//	         session.setAttribute("mem", mem);
-//	      }
 	      System.out.println(">>>> Login");
 	      System.out.println(">>>> param : " + mem.toLogin());
 	      
@@ -115,16 +110,16 @@ public class RController {
 	   }
 	   @PostMapping("/api/seniorList")
 	   public List<Senior> senior(@RequestBody String mem_id) {
-	      System.out.println("³ëÀÎ»ó¼¼");
+	      System.out.println("ë…¸ì¸ìƒì„¸");
 
 	      List<Senior> senior = smapper.seniorList();
 	      System.out.println(">>>> param : " + senior.toString());
 	      return senior;
 	   }
 	
-		@PostMapping("/api/seniorInsert")
+	   @PostMapping("/api/seniorInsert")
 		public int commentInsert(@RequestBody Senior senior) {
-			System.out.println("½Ã´Ï¾î µî·Ï!");
+			System.out.println("ì‹œë‹ˆì–´ ë“±ë¡!");
 			return service.seniorInsert(senior);
 		}
 }

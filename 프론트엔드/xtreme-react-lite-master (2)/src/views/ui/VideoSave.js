@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 자물쇠2 from "../../assets/images/bg/자물쇠2.png";
 import 'css/lest.css';
-// import Bar from 'modals/Bar';
 import Pagination from 'modals/Pagination';
 import RecordModal from 'modals/RecordModal';
 import { Link } from "react-router-dom";

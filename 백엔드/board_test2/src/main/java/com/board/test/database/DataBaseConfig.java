@@ -19,7 +19,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @EnableJpaRepositories(
-		basePackages="com.board.test.repo", // repository¸¦ °ü¸®ÇÒ ÆĞÅ°Áö ¸í½Ã
+		basePackages="com.board.test.repo", // repositoryë¥¼ ê´€ë¦¬í•  íŒ¨í‚¤ì§€ ëª…ì‹œ
 		entityManagerFactoryRef = "entityManagerFactory", //EntityManagerFactory
 		transactionManagerRef = "transactionManager" // transactionManager
 		)
@@ -28,7 +28,7 @@ public class DataBaseConfig {
 	= "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy";
 
 	@Bean
-	@Primary // ÇØ´ç BeanÀ» ¿ì¼±ÀûÀ¸·Î ¼±ÅÃÇÏµµ·Ï ÇÏ´Â annotation
+	@Primary // í•´ë‹¹ Beanì„ ìš°ì„ ì ìœ¼ë¡œ ì„ íƒí•˜ë„ë¡ í•˜ëŠ” annotation
 	public DataSource defaultDataSource() {
 		HikariConfig dataSourceConfig = new HikariConfig();
 		dataSourceConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -55,14 +55,14 @@ public class DataBaseConfig {
 		LocalContainerEntityManagerFactoryBean req = 
 		builder.dataSource(defaultDataSource())
 		.packages("com.board.test.domain")
-		// domainÀ» °ü¸®ÇÒ ÆĞÅ°Áö °æ·Î ¸í½Ã (domain = DO ÆÄÀÏ)
+		// domainì„ ê´€ë¦¬í•  íŒ¨í‚¤ì§€ ê²½ë¡œ ëª…ì‹œ (domain = DO íŒŒì¼)
 		.properties(propertiesHashMap)
 		.build();
 		
 		return req;
 	}
 	
-	//Æ®·£Á§¼Ç °ü¸®
+	//íŠ¸ëœì ì…˜ ê´€ë¦¬
 	@Primary
 	@Bean(name = "transactionManager")
 	PlatformTransactionManager transactionManager(
@@ -73,4 +73,3 @@ public class DataBaseConfig {
 	
 	
 }
-	

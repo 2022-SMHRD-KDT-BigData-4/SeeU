@@ -48,7 +48,6 @@ return (
     <input className="title-input" 
             type='text' 
             placeholder='제목' 
-            // onChange={getValue}
             name='b_title'
     />
     <br></br>

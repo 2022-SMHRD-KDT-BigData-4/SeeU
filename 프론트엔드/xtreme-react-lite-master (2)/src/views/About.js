@@ -28,7 +28,7 @@ function Login() {
   
 
   
-    $(".loginregister__button1").on('click',function () {      //마우스 누를떼 
+    $(".loginregister__button1").on('click',function () {      //마우스 누를때
 
       param.mem_id = $("div.loginregister__id > input:eq(0)").val()
       param.mem_pw = $("div.loginregister__pw > input:eq(0)").val()

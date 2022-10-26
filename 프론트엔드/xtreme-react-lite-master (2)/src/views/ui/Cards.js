@@ -14,9 +14,6 @@ import Blog from "../../components/dashboard/Blog";
 import bg1 from "../../assets/images/bg/bg1.jpg";
 import snp from "../../assets/images/bg/시니어.png";
 import 자물쇠2 from "../../assets/images/bg/자물쇠2.png";
-// import bg2 from "../../assets/images/bg/bg2.jpg";
-// import bg3 from "../../assets/images/bg/bg3.jpg";
-// import bg4 from "../../assets/images/bg/bg4.jpg";
 import React, {useEffect, useState} from "react";
 import 'css/Modal.css'
 import Modal from "modals/Modal";
@@ -41,16 +38,11 @@ const Cards = () => {
       console.log("1", response)
       param.mem_id = (sessionStorage.getItem('mem_id'))
       console.log(param.mem_id)
-      // console.log("2", Object.values(response.data[2])[1])
-      // console.log("eeeeeeeeee",response.data[1]['s_photoname'])
       
-
-      
-        // setphoto(response.data[1]['s_photoname']);
       
       
       if(response.data){
-        // 여기 스프레드표현법 말고 그냥 바로넣음(그래야 실행이 되네??)
+        // 여기 스프레드표현법 말고 그냥 바로넣음(그래야 실행이 됨)
         setSenior(response.data); // ...을 써줘서  state가 변경된걸 리액트에게 알려주기
         console.log(response.data);
     
@@ -124,7 +116,6 @@ const Cards = () => {
 
                 senior.map((senior,index) => (
               <Card key = {index} className="snlist">
-                {/* <CardImg alt="Card image cap" src= {bg1} top width="100%" /> */}
                 <CardImg alt="Card image cap" className="go" src= {snp} top width="100%" />
                 <CardBody className="to">
                   <CardTitle tag="h5">{senior.s_name}</CardTitle>

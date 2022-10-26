@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.test.mapper.CommentMapper">
+
+	<select id="CommentList" parameterType="int" resultType="com.board.test.domain.Comment">
+		select * from tbl_comment where b_num = #{num}
+	</select>
+	
+	<insert id="insertComment" parameterType="com.board.test.domain.Comment">
+		insert into tbl_comment(b_num, c_content,c_date,mem_id)
+		values (#{b_num}, #{c_content}, now(),#{mem_id} )
+	</insert>
+	
+	  <delete id="deleteComment" parameterType="int">
+		delete from tbl_comment where c_num =#{num}
+	</delete>  
+
+	
+
+
+</mapper>

@@ -11,9 +11,6 @@ import $, { data } from "jquery";
 const Comment = (props) =>{
   // 댓글 쓰기 페이지
 
-  // const state = useLocation().state;
-  // let num = parseInt(state.b_num)
-  // console.log("데이터",state.b_num);
   console.log("데이터",props.data)
 
   const [comment, setComment] = useState([]);
@@ -49,8 +46,8 @@ const writeComment=()=>{
   param.b_num = parseInt(props.data);
   param.mem_id = (sessionStorage.getItem('mem_id'))
   console.log($("textarea.q-1").val());
-  console.log("파람아~ : ", param);
-  console.log("댓글 추가 해줘");
+  console.log("PARAM : ", param);
+  console.log("댓글 추가");
 
 
 Axios.post("/api/commentInsert", param).then((response)=>{
@@ -73,7 +70,7 @@ Axios.post("/api/commentInsert", param).then((response)=>{
   let num = e;
 
   Axios.post("/api/commentDelete", num, {headers: { "Content-Type": `application/json`}}).then((response)=>{
-    console.log("댓글삭제 ㄱㄱ?",response);
+    console.log("댓글을 삭제하시겠습니까?",response);
     setTest("2");
     location.reload()
   })

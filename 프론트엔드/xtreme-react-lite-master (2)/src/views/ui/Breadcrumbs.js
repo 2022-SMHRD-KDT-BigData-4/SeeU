@@ -33,7 +33,7 @@ function Singup() {
   useEffect(()=>{
   
   
-    $(".loginregister__button").on('click',function () {      //마우스 누를떼 
+    $(".loginregister__button").on('click',function () {      //마우스 누를때
       console.log($("div.loginregister__id > input:eq(0)").val());
       console.log($("div.loginregister__email > input:eq(0)").val());
       console.log($("div.loginregister__pw > input:eq(0)").val());
