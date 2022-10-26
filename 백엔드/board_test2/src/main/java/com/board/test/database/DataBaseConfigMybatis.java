@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-@Configuration // ¼³Á¤ÆÄÀÏ
-@EnableTransactionManagement // Æ®·£Á§¼Ç °ü¸®
+@Configuration // ì„¤ì •íŒŒì¼
+@EnableTransactionManagement // íŠ¸ëœì ì…˜ ê´€ë¦¬
 @MapperScan(basePackages = "com.board.test.mapper")
 public class DataBaseConfigMybatis {
 	
@@ -36,20 +36,20 @@ public class DataBaseConfigMybatis {
 		return new HikariDataSource(dataSourceConfig);
 	}
 	
-	//µ¥ÀÌÅÍº£ÀÌ½º¿ÍÀÇ ¿¬°á°ú SQLÀÇ ½ÇÇà¿¡ ´ëÇÑ ¸ğµç °ÍÀ» °¡Áø °¡Àå Áß¿äÇÑ °´Ã¼
+	//ë°ì´í„°ë² ì´ìŠ¤ì™€ì˜ ì—°ê²°ê³¼ SQLì˜ ì‹¤í–‰ì— ëŒ€í•œ ëª¨ë“  ê²ƒì„ ê°€ì§„ ê°€ì¥ ì¤‘ìš”í•œ ê°ì²´
 	@Bean(name="batisSqlSessionFactory")
 	public SqlSessionFactory batisSqlSessionFactory(@Qualifier("batisDataSource") DataSource batisDataSource, ApplicationContext applicationContext) throws Exception {
 		SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
 		sqlSession.setDataSource(batisDataSource);
-		sqlSession.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml")); //mybatis-config.xmlÀÇ °æ·Î
-		sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/BoardMapper.xml")); //Äõ¸®¹®À» °ü¸®ÇÏ´Â mapperÀÇ °æ·Î
+		sqlSession.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml")); //mybatis-config.xmlì˜ ê²½ë¡œ
+		sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/BoardMapper.xml")); //ì¿¼ë¦¬ë¬¸ì„ ê´€ë¦¬í•˜ëŠ” mapperì˜ ê²½ë¡œ
 	      sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/MemberMapper.xml"));
 	      sqlSession.setMapperLocations(applicationContext.getResources("classpath:/com/board/test/mapper/SeniorMapper.xml"));
 	      
 		return sqlSession.getObject();
 	}
 	
-	// ¸¶ÀÌ¹ÙÆ¼½º ½ºÇÁ¸µ ¿¬µ¿¸ğµâÀÇ ÇÙ½É
+	// ë§ˆì´ë°”í‹°ìŠ¤ ìŠ¤í”„ë§ ì—°ë™ëª¨ë“ˆì˜ í•µì‹¬
 	@Bean(name = "batisSqlSessionTemplate")
 	public SqlSessionTemplate batSessionTemplate(SqlSessionFactory batisSqlSessionFactory) throws Exception {
 		

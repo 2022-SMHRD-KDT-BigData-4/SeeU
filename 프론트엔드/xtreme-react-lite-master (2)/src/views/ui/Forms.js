@@ -98,10 +98,6 @@ const Forms = () => {
                   </Label>
                 </FormGroup>
               </FormGroup>
-              {/* <FormGroup>
-                <Label for="exampleFile">이미지</Label>
-                <Input id="exampleFile" name="file" type="file" />
-              </FormGroup> */}
               <FormGroup>
                 <Label for="exampleTel">보호자 전화번호</Label>
                 <Input

@@ -8,7 +8,6 @@ import {useEffect,useState} from "react";
 import Axios from "axios";
 import { useLocation } from 'react-router-dom';
 
-// class BoardList extends Component {
     
 function Test(){
 

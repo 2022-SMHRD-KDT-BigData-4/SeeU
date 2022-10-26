@@ -17,12 +17,6 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "백엔드",
   },
-  // {
-  //   avatar: user3,
-  //   name: "심우현",
-  //   email: "hgover@gmail.com",
-  //   project: "인공지능 총괄",
-  // },
 ];
 
 const Int = () => {

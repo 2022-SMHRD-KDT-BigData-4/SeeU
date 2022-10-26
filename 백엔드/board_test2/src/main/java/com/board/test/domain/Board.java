@@ -13,28 +13,28 @@ import lombok.NonNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity // ¼­¹ö ½ÇÇà½Ã Object Relation MappingÀÌ µÊ
+@Entity // ì„œë²„ ì‹¤í–‰ì‹œ Object Relation Mappingì´ ë¨
 @Data
 @Table(name="tbl_board")
 public class Board {
 	
-	@Id // PK¸¦ ÇØ´ç º¯¼ö·Î ÇÏ°Ú´Ù´Â ¶æ
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // ÇØ´ç µ¥ÀÌÅÍº£ÀÌ½º ¹øÈ£ Áõ°¡ Àü·«À» µû¶ó°¡°Ú´Ù
-	 // ±Û ¹øÈ£
+	@Id // PKë¥¼ í•´ë‹¹ ë³€ìˆ˜ë¡œ í•˜ê² ë‹¤ëŠ” ëœ»
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // í•´ë‹¹ ë°ì´í„°ë² ì´ìŠ¤ ë²ˆí˜¸ ì¦ê°€ ì „ëµì„ ë”°ë¼ê°€ê² ë‹¤
+	// ê¸€ ë²ˆí˜¸
 	private int b_num;
 	
 	@NonNull
 	private String b_title;
 	
-	// ³»¿ë
+	// ë‚´ìš©
 	@NonNull
 	private String b_content;
 	
-	// ÀÛ¼ºÀÚ
+	// ì‘ì„±ì
 	@NonNull
 	private String b_writer;
 		
-	// ÀÛ¼º ³¯Â¥
+	// ì‘ì„± ë‚ ì§œ
 	@NonNull
 	private String b_date;
 		
